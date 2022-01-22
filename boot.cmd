@@ -13,6 +13,7 @@ if load ${devtype} ${devnum}:${bootpart} ${kernel_addr_r} /boot/zImage; then
   if load ${devtype} ${devnum}:${bootpart} ${fdt_addr_r} /boot/dtbs/${fdtfile}; then
     fdt addr ${fdt_addr_r};
     if load ${devtype} ${devnum}:${bootpart} ${fdtoverlay_addr_r} /boot/overlay.dtb; then
+      fdt resize 8192;
       fdt apply ${fdtoverlay_addr_r};
     fi;
     if load ${devtype} ${devnum}:${bootpart} ${ramdisk_addr_r} /boot/initramfs-linux.img; then

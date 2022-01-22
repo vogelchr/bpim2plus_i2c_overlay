@@ -1,4 +1,4 @@
-all : boot.scr overlay.dtb
+all : boot.scr overlay.dtb orig.dts
 
 .PHONY : clean install
 clean :
